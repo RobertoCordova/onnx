@@ -5,8 +5,8 @@ Sometimes instead of execute our model in the cloud, we need to run it in our cu
 <p>This project builds a model in the client environment, in this case, a
 <a href="https://github.com/RobertoCordova/onnx">web application</a>.</p>
 
-For this project, I trained a basic neuronal network to detect air image. The image is capture in a web application and I will try to predict the label in the client side.
-The trainig process is exactly the same like a conventional model.
+I trained a basic neuronal network to detect air image using <a href="https://pytorch.org/">Pytorch</a> . The image is capture in a web application and I will try to predict the label in the client side.
+
 
 I imported a model with air images.
 <p align="center">
@@ -20,7 +20,7 @@ Some image that I used for clasification
 <p align="center">
         <img src="./imgs/imgs_sample.png"/>
 
-For my model layer, I will use Transfer Learning, importing a image for an existing model and just changed the last layer to use my images.
+For my model layer, I will use <a href="https://en.wikipedia.org/wiki/Transfer_learning">Transfer Learning</a>, importing a image for an existing model and just changed the last layer to use my images.
 <p align="center">
         <img src="./imgs/transfer_learning.png"/>
 
@@ -37,22 +37,14 @@ I trained my model as normal, but I will change the way to export the model.
 <p align="center">
         <img src="./imgs/export.png"/>
 
-This step is optional, but as I know the format of the uncomming data I prefer do this with Pytorch, in Javascript is a little more complicate. 
+This step is optional, but as I know the format of the uncomming data, so I prefer do this with Pytorch, in Javascript is a little more complicate. 
 Also added <a href="https://en.wikipedia.org/wiki/Softmax_function">Softmax</a>   because I want to have probability distribution in my outcome.
 <p align="center">
         <img src="./imgs/pre_post_process.png"/>
 
-Once I have exported model, I will test in oder to be sure that it will work.
+Once I have exported model, I will test in order to be sure that it will work.
 <p align="center">
         <img src="./imgs/test.png"/>
-**
-<p><a href="https://github.com/microsoft/onnxjs">ONNX.js</a> is a Javascript library for running ONNX models on browsers and on Node.js.</p>
-
-
-
-
-
-
 
  <hr>
-Remember! .. If you come from the future and I published this post a few days ago, maybe the whole exercise is finished and you can take a look at it by running it
+If you come from the future and I published this post a few days ago, maybe the whole exercise is finished and you can take a look at it.
