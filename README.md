@@ -1,7 +1,23 @@
 # Machine Learning ecosystem with ONNX
 <i>This example is base in <a href="https://www.youtube.com/watch?v=Vs730jsRgO8">How to run PyTorch models in the browser with ONNX.js</a></i>
+<h2>Abstract</h2>
 
-Sometimes instead of execute our model in the cloud, we need to run it in our customer device. To manage this requirement I will use <a href="https://onnx.ai/">ONNX</a>, it is an open format built to represent machine learning models.
+<p>Suppose you have to use a machine learning model to identify a stone, you take your camera, focus on the stone, take the photo and let it process in the cloud ... and boom! You have it in seconds!</br>
+But what if you are inside a deep cave or in the middle of the ocean or you are a robot on Mars?</p>
+I want to talk about a different paradigm than cloud computing, I want to introduce Edge AI.
+<p>In a really simple way, Edge AI means that you will use your model on your client's device, it does not matter if you do not have or do not want to send your data through the internet.</p>
+<p>But how do we think to use a ML model within a small device with small microprocessors when the trend is that these models are getting bigger, require more storage and need large data centers?
+The answer to this question is the difference between training a model and using a model.</p>
+<p>Training a model required a lot of resources, but once we have it, we will just take small mount of data and pass it through our model, this step is called <i>Inference</i>.</p>
+
+<p>In addition, when we have our model trained, we can compress its size with different techniques such as <i>Prunnig</i> or <i>Poda</i>, which look for connections in our model that are not really part of the final result and erase them.</p>
+
+<p>In this simple project, I will use Pytorch with ONNX and Transfer Learning, to build a model that can be running in a web application.</p>
+</br></br>
+
+<h2>The Model</h2>
+<p>Sometimes instead of execute our model in the cloud, we need to run it in our customer device.</br> 
+To manage this requirement I will use <a href="https://onnx.ai/">ONNX</a>, it is an open format built to represent machine learning models.</p> 
 <p>This project runs a model in the client environment, in this case, a web application.</p>
 
 I trained a basic neuronal network to detect air image using <a href="https://pytorch.org/">Pytorch</a> . The image is capture in a web application and I will try to predict the label in the client side.
@@ -44,7 +60,9 @@ Also added <a href="https://en.wikipedia.org/wiki/Softmax_function">Softmax</a> 
 Once I have exported model, I will test in order to make sure that it will work.
 <p align="center">
         <img src="./imgs/test.png"/>
-
+</br>
+</br>
+<h2>Web Application</h2>
 In a few days, I will upload the web application &#128540;
  <hr>
  
