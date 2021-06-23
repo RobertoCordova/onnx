@@ -26,9 +26,13 @@ session.loadModel("/model_onnx.onnx").then(()=>{
     console.log("modelo cargado correctamente")
 })
 document.addEventListener('DOMContentLoaded', function() {
-    var mymap = L.map('mapa').setView([41.39, 2.15], 17);
+    // var mymap = L.map('mapa').setView([41.39, 2.15], 17);
     // var mymap = L.map('mapa').setView([51.505, -0.09], 17);
     // var mymap = L.map('mapa').setView([-2.20, -79.90], 17);
+    // var mymap = L.map('mapa').setView([-0.18, -78.46], 17);
+    var mymap = L.map('mapa').setView([-0.12358229294979388, -78.36056113706155], 20);
+    
+    
     // L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     //     maxZoom: 18,
     //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -48,9 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.innerText = "Cargando...";
         btn.disable = true;
 
+        const panel = document.getElementById('resultado')
+        panel.innerText = ""
+
         return leafletImage(mymap, function(err, canvas){
-        //     alert("entra")
-        // });
+        
             const img = new Image();
             img.src = canvas.toDataURL();
 
@@ -78,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         const maxIdx = pred.indexOf(maxValue)
                         const label = lables[maxIdx]
 
-                        const panel = document.getElementById('resultado')
                         panel.innerText = label
 
                         btn.innerText='Clasifica'

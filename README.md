@@ -10,7 +10,7 @@ I want to talk about a different paradigm than cloud computing, I want to introd
 The answer to this question is the difference between training a model and using a model.</p>
 <p>Training a model required a lot of resources, but once we have it, we will just take small mount of data and pass it through our model, this step is called <i>Inference</i>.</p>
 
-<p>In addition, when we have our model trained, we can compress its size with different techniques such as <i>Prunnig</i> or <i>Poda</i>, which look for connections in our model that are not really part of the final result and erase them.</p>
+<p>In addition, when we have our model trained, we can compress its size with different techniques such as <a href="https://en.wikipedia.org/wiki/Decision_tree_pruning"><i>Prunnig (Poda)</i></a>, which look for connections in our model that are not really part of the final result and erase them.</p>
 
 <p>In this simple project, I will use Pytorch with ONNX and Transfer Learning, to build a model that can be running in a web application.</p>
 </br></br>
@@ -63,7 +63,22 @@ Once I have exported model, I will test in order to make sure that it will work.
 </br>
 </br>
 <h2>Web Application</h2>
-In a few days, I will upload the web application &#128540;
+This is a simple HTML, js and css web page, where we use the model generate with ONNX.
+<p>First, I imported the model and copy the labels.</p>
+<p align="center">
+        <img src="./imgs/import_model.png"/>
+
+I drew a square an use <a href=https://leafletjs.com>leafletjs</a> for the map.
+<p align="center">
+        <img src="./imgs/square.png"/>
+
+I have a button to send the image to the model.
+<p align="center">
+        <img src="./imgs/use_model.png"/>
+
+And that's it!
+<p align="center">
+        <img src="./imgs/final.png"/>
  <hr>
- 
-If you come from the future and I published this post a few days ago, maybe the whole exercise is finished and you can take a look at it n my <a href="https://github.com/RobertoCordova/onnx">github account</a>.
+
+the whole exercise is finished and you can take a look at it in my <a href="https://github.com/RobertoCordova/onnx">github account</a>.
